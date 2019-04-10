@@ -5,7 +5,7 @@ $(document).ready(function () {
 	function renderButtons() {
 		$("#cartoon-buttons").empty();
 		for (i = 0; i < cartoon.length; i++) {
-			$("#cartoon-buttons").append("<button class='btn btn-info' data-cartoon='" + cartoon[i] +  "'>" + cartoon[i] + "</button>");
+			$("#cartoon-buttons").append("<button class='btn btn-info searchButton' data-cartoon='" + cartoon[i] +  "'>" + cartoon[i] + "</button>");
 		}
 	}
 
@@ -14,8 +14,8 @@ $(document).ready(function () {
 	// Adding a button for cartoon entered
 	$("#add-cartoon").on("click", function () {
 		event.preventDefault();
-		var cartoon = $("#cartoon-input").val().trim();
-		cartoon.push(cartoon);
+		var cartoonSearch = $("#cartoon-input").val().trim();
+		cartoon.push(cartoonSearch);
     renderButtons();
     $("cartoon-input").val("");
 		return;
@@ -23,7 +23,7 @@ $(document).ready(function () {
 
 
 	// Getting gifs from api
-	$("button").on("click", function () {
+	$(document).on("click", ".searchButton", function () {
 		var cartoon = $(this).attr("data-cartoon");
 		var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
 			cartoon + "&api_key=dc6zaTOxFJmzC&limit=10"
