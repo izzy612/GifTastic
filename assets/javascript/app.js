@@ -16,7 +16,8 @@ $(document).ready(function () {
 		event.preventDefault();
 		var cartoon = $("#cartoon-input").val().trim();
 		cartoon.push(cartoon);
-		renderButtons();
+    renderButtons();
+    $("cartoon-input").val("");
 		return;
 	});
 
