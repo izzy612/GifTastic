@@ -13,6 +13,7 @@ Each gif can be animated by clicking on the picture. They will stop if you click
 <li>jQuery</li>
 <li>Giphy API</li>
 
+<br>
 
 https://izzy612.github.io/GifTastic/
 
